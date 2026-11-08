@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ubicación del local"
+            android:textColor="@color/primary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLocationBack"
+            style="@style/Widget.SQLite.Button.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:text="← Volver al inicio" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="14dp"
+            android:text="El mapa muestra las coordenadas guardadas del local. Las indicaciones se abren en Google Maps. Tu ubicación solo se solicita si tocas el botón correspondiente."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/border_soft"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <EditText
+                    android:id="@+id/etLocationName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del local"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/etLocationAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Dirección"
+                    android:inputType="textPostalAddress" />
+
+                <EditText
+                    android:id="@+id/etLocationLatitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Latitud (ej. -33.4489)"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/etLocationLongitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Longitud (ej. -70.6693)"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/tvLocationUpdated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Guardar ubicación"
+                    app:cornerRadius="15dp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/border_soft">
+
+                    <FrameLayout
+                        android:id="@+id/mapContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/tvMapStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_info"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="Cargando mapa…"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+                </FrameLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOpenMap"
+                    style="@style/Widget.SQLite.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Abrir ubicación en Google Maps"
+                    app:cornerRadius="15dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDirections"
+                    style="@style/Widget.SQLite.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Cómo llegar a la empresa"
+                    app:cornerRadius="15dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCurrentLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Mostrar mi ubicación actual"
+                    app:cornerRadius="15dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>
